@@ -1,14 +1,9 @@
-import { useState } from 'react'
 import { useFetch } from './hooks/useFetch'
-
-type Repository = {
-    full_name: string;
-    description: string;
-};
+import Repository from './types/repository';
 
 function App() {
     const { data: repositories, isFetching } =
-        useFetch<Repository[]>('https://api.github.com/users/devbarba/repos');
+        useFetch<Repository[]>('users/devbarba/repos');
 
   return (
     <ul>
